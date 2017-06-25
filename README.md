@@ -30,15 +30,30 @@ Keeping track of orders from customers including user's order item, restaurant, 
 
 domain:
 
-Ordesr: order id, user name, restaurant name, list of items, full price, order time, delivery address, estimated delivery time, payment status.
+Ordesr: order id, customer name, restaurant name, list of items, full price, order time, delivery address, estimated delivery time, payment status.
 items: food id, food name, price, quantity.
 
 API:
 
 Get an order by order id, get, http://localhost:60000/order/{orderId}
-give an order, post, http://localhost:60000/order
-update order, update, http://localhost:60000/order
+create an order, post, http://localhost:60000/order
+update order, put, http://localhost:60000/order
+delete a order by order id, delete, http://localhost:60000/order/{orderId}
+delete all order, delete, http://localhost:60000/order
+
 
 Payment Service
 
 Handling payment for orders provided by meal order service. Accept credit card number, expiration date, and security code from customer.
+
+domain:
+
+payment: payment id, order id, customer name, credit card number, expiration date, security code, payment status, transition time.
+
+API:
+
+get an payment by order id, get, http://localhost:60000/payment/{orderId}
+create a payment by order id, post, http://localhost:60000/payment/{orderId}
+provide payment information by order id, put, http://localhost:60000/payment/{orderId}
+cancel a payment by order id, put, http://localhost:60000/payment/cancel/{orderId}
+
