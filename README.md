@@ -41,7 +41,7 @@ Providing information about restaurants and menus including restaurant's name an
 | ------------- |:-------------:| -----:|
 | Get an order by order id| get| http://localhost:60000/order/{orderId}|
 | create an order| post| http://localhost:60000/order|
-| update order| put| http://localhost:60000/order|
+| update order| put| http://localhost:60000/order/{orderId}|
 | delete a order by order id| delete| http://localhost:60000/order/{orderId}|
 | delete all order| delete| http://localhost:60000/order|
 
