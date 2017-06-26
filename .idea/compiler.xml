@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Eureka" />
+        <module name="HystrixDashboard" />
+        <module name="MealOrderService" />
+        <module name="PaymentService" />
+        <module name="RestaurantMenuService" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Eureka" target="1.8" />
+      <module name="FoodDeliverySystem" target="1.8" />
+      <module name="HystrixDashboard" target="1.8" />
+      <module name="MealOrderService" target="1.8" />
+      <module name="PaymentService" target="1.8" />
+      <module name="RestaurantMenuService" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Eureka/Eureka.iml" filepath="$PROJECT_DIR$/Eureka/Eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FoodDeliverySystem.iml" filepath="$PROJECT_DIR$/FoodDeliverySystem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HystrixDashboard/HystrixDashboard.iml" filepath="$PROJECT_DIR$/HystrixDashboard/HystrixDashboard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MealOrderService/MealOrderService.iml" filepath="$PROJECT_DIR$/MealOrderService/MealOrderService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PaymentService/PaymentService.iml" filepath="$PROJECT_DIR$/PaymentService/PaymentService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RestaurantMenuService/RestaurantMenuService.iml" filepath="$PROJECT_DIR$/RestaurantMenuService/RestaurantMenuService.iml" />
+    </modules>
+  </component>
+</project>
