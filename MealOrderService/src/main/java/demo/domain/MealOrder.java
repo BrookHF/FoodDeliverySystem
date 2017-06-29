@@ -27,8 +27,4 @@ public class MealOrder {
     private Date estimatedDeliveryTime;
     private Enum<PaymentStatus> paymentStatus;
 
-    public enum PaymentStatus {
-        PENDING, PAYED, CANCELLED
-    }
-
 }
