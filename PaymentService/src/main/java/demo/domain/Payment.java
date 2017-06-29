@@ -24,7 +24,8 @@ public class Payment {
     private Enum<PaymentStatus> paymentStatus;
     private Date transitionTime;
 
-    public enum PaymentStatus {
-        PENDING, PAYED, CANCELLED
+    public Payment(Long orderId) {
+        this.orderId = orderId;
+        this.paymentStatus = PaymentStatus.PENDING;
     }
 }
