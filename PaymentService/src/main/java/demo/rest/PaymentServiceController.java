@@ -34,9 +34,9 @@ public class PaymentServiceController {
         return this.paymentService.providePaymentInfo(payment);
     }
 
-    @RequestMapping(value = "/payment/{orderId}")
-    public void cancelPayment(@PathVariable Long orederId) {
-        this.paymentService.cancelPayment(orederId);
+    @RequestMapping(value = "/payment/{orderId}", method = RequestMethod.DELETE)
+    public void cancelPayment(@PathVariable Long orderId) {
+        this.paymentService.cancelPayment(orderId);
     }
 
 }
