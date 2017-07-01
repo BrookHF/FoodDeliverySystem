@@ -44,11 +44,6 @@
             <version>3.6.2</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>com.fang</groupId>
-            <artifactId>PaymentService</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
     </dependencies>
 
     <build>
@@ -59,5 +54,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
