@@ -7,7 +7,6 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 /**
  * Created by vagrant on 6/27/17.
  */
-@RepositoryRestResource()
 public interface MealOrderRepository extends PagingAndSortingRepository<MealOrder, Long> {
 
     MealOrder findByOrderId(@Param("orderId") Long orderId);

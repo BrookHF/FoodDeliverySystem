@@ -5,6 +5,7 @@ import demo.domain.FoodItemRepository;
 import demo.domain.Restaurant;
 import demo.domain.RestaurantRepository;
 import demo.service.RestaurantMenuService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ public class RestaurantMenuServiceImp implements RestaurantMenuService{
     private RestaurantRepository restaurantRepository;
     private FoodItemRepository foodItemRepository;
 
+    @Autowired
     public RestaurantMenuServiceImp(RestaurantRepository restaurantRepository, FoodItemRepository foodItemRepository) {
         this.restaurantRepository = restaurantRepository;
         this.foodItemRepository = foodItemRepository;
@@ -42,8 +44,10 @@ public class RestaurantMenuServiceImp implements RestaurantMenuService{
     }
 
     public void deleteRestaurant(String restaurantName) {
-        restaurantRepository.deleteByRestaurantName(restaurantName);
-        foodItemRepository.deleteByRestaurantName(restaurantName);
+        for(Restaurant restaurant : restaurantRepository.findByRestaurantName(restaurantName)) {
+            restaurantRepository.deleteByRestaurantId(restaurant.getRestaurantId());
+            foodItemRepository.deleteByRestaurantId(restaurant.getRestaurantId());
+        }
     }
 
     public List<FoodItem> getMenuFromRestaurant(String restaurantName) {
@@ -55,7 +59,10 @@ public class RestaurantMenuServiceImp implements RestaurantMenuService{
     }
 
     public void deleteMenu(String restaurantName) {
-        foodItemRepository.deleteByRestaurantName(restaurantName);
+        for(Restaurant restaurant : restaurantRepository.findByRestaurantName(restaurantName)) {
+            foodItemRepository.deleteByRestaurantId(restaurant.getRestaurantId());
+        }
+
     }
 
     public void deleteFood(String restaurantName, String foodName) {

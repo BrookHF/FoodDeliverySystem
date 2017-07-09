@@ -12,7 +12,7 @@ public interface FoodItemRepository extends PagingAndSortingRepository<FoodItem,
 
     List<FoodItem> findByRestaurantName(@Param("restaurantName") String restaurantName);
 
-    void deleteByRestaurantName(@Param("restaurantName") String restaurantName);
+    void deleteByRestaurantId(@Param("restaurantId") Long restaurantId);
 
     void deleteByRestaurantNameAndFoodName(@Param("restaurantName") String restaurantName, @Param("foodName") String foodName);
 }

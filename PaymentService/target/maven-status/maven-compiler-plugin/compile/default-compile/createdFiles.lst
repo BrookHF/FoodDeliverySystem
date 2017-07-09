@@ -2,7 +2,6 @@ demo/domain/PaymentDao.class
 demo/PaymentServiceApplication.class
 demo/service/PaymentServiceImp/PaymentServiceImp.class
 demo/service/PaymentService.class
-demo/domain/PaymentDao$PaymentStatus.class
 demo/rest/PaymentServiceController.class
 demo/domain/Payment.class
 demo/domain/PaymentServiceRepository.class

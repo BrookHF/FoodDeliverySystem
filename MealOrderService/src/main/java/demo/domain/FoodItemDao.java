@@ -3,34 +3,28 @@ package demo.domain;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import org.springframework.data.repository.query.Param;
 
 /**
- * Created by vagrant on 6/27/17.
+ * Created by vagrant on 7/9/17.
  */
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@Entity
-public class FoodItem {
+public class FoodItemDao {
 
-    @Id
-    @GeneratedValue
     private Long foodId;
 
-    private String restaurantName;
     private String foodName;
     private double foodPrice;
+    private int quantity;
 
-    public FoodItem() {
+    public FoodItemDao() {
     }
 
     @JsonCreator
-    public FoodItem(String restaurantName, String foodName, double foodPrice) {
-        this.restaurantName = restaurantName;
+    public FoodItemDao(@Param("foodName") String foodName, @Param("foodPrice") double foodPrice, @Param("quantity")int quantity) {
         this.foodName = foodName;
         this.foodPrice = foodPrice;
+        this.quantity = quantity;
     }
 }

@@ -3,17 +3,16 @@ package demo.rest;
 import demo.domain.MealOrder;
 import demo.domain.PaymentDao;
 import demo.service.MealOrderService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-/**
- * Created by vagrant on 6/29/17.
- */
 @RestController
 public class MealOrderController {
 
     private MealOrderService mealOrderService;
 
+    @Autowired
     public MealOrderController(MealOrderService mealOrderService) {
         this.mealOrderService = mealOrderService;
     }
@@ -30,7 +29,7 @@ public class MealOrderController {
     }
 
     @RequestMapping(value = "/order/{orderId}", method = RequestMethod.PUT)
-    public MealOrder changPaymentStaus(@RequestBody PaymentDao paymentDao) {
+    public MealOrder changPaymentStatus(@RequestBody PaymentDao paymentDao) {
         return mealOrderService.changeOrderPaymentStatus(paymentDao);
     }
 
