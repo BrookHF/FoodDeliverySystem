@@ -64,3 +64,8 @@ Providing information about restaurants and menus including restaurant's name an
 | provide payment information by order id      | put      | http://localhost:60000/payment/{orderId}   |
 | cancel a payment by order id      | put      | http://localhost:60000/payment/cancel/{orderId}   |
 
+##Service Start Sequence
+1. docker-compose up
+3. sh ./start-restaurant-menu.sh
+4. sh ./start-meal-order.sh
+5. sh ./start-payment.sh

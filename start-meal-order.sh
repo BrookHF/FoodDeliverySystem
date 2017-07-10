@@ -1,0 +1,1 @@
+ java -jar MealOrderService/target/MealOrderService-1.0-SNAPSHOT.jar

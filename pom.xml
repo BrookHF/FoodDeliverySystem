@@ -20,8 +20,6 @@
         <module>MealOrderService</module>
         <module>RestaurantMenuService</module>
         <module>PaymentService</module>
-        <module>HystrixDashboard</module>
-        <module>Eureka</module>
     </modules>
 
     <properties>

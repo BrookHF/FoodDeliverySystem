@@ -1,6 +1,8 @@
 package demo.domain;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -17,14 +19,15 @@ public class Restaurant {
 
     @Id
     @GeneratedValue
-    Long restaurantId;
+    private Long restaurantId;
 
-    String restaurantName;
+    private String restaurantName;
 
     public Restaurant() {
     }
 
-    public Restaurant(String restaurantName) {
+    @JsonCreator
+    public Restaurant(@JsonProperty("restaurantName") String restaurantName) {
         this.restaurantName = restaurantName;
     }
 }

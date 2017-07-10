@@ -44,9 +44,9 @@ public class RestaurantMenuServiceImp implements RestaurantMenuService{
     }
 
     public void deleteRestaurant(String restaurantName) {
+        foodItemRepository.deleteByRestaurantName(restaurantName);
         for(Restaurant restaurant : restaurantRepository.findByRestaurantName(restaurantName)) {
             restaurantRepository.deleteByRestaurantId(restaurant.getRestaurantId());
-            foodItemRepository.deleteByRestaurantId(restaurant.getRestaurantId());
         }
     }
 
@@ -59,10 +59,7 @@ public class RestaurantMenuServiceImp implements RestaurantMenuService{
     }
 
     public void deleteMenu(String restaurantName) {
-        for(Restaurant restaurant : restaurantRepository.findByRestaurantName(restaurantName)) {
-            foodItemRepository.deleteByRestaurantId(restaurant.getRestaurantId());
-        }
-
+        foodItemRepository.deleteByRestaurantName(restaurantName);
     }
 
     public void deleteFood(String restaurantName, String foodName) {

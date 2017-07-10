@@ -56,7 +56,7 @@ public class RestaurantMenuController {
         restaurantMenuService.deleteMenu(restaurantName);
     }
 
-    @RequestMapping(value = "/menu/{restaurantName, foodName}")
+    @RequestMapping(value = "/menu/{restaurantName, foodName}", method = RequestMethod.DELETE)
     void deleteFoodItemOfRestaurant(String restaurantName, String foodName) {
         restaurantMenuService.deleteFood(restaurantName, foodName);
     }

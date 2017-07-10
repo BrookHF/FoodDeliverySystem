@@ -2,6 +2,7 @@ package demo.domain;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -28,7 +29,7 @@ public class FoodItem {
     }
 
     @JsonCreator
-    public FoodItem(String restaurantName, String foodName, double foodPrice) {
+    public FoodItem(@JsonProperty("restaurantName") String restaurantName, @JsonProperty("foodName") String foodName, @JsonProperty("foodPrice") double foodPrice) {
         this.restaurantName = restaurantName;
         this.foodName = foodName;
         this.foodPrice = foodPrice;

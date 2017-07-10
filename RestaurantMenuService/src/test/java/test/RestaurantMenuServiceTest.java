@@ -41,21 +41,4 @@ public class RestaurantMenuServiceTest {
         assertThat(this.service.getMenuFromRestaurant("yummy").get(0).getFoodName()).isEqualTo("salad");
         assertThat(this.service.getMenuFromRestaurant("yummy").get(0).getFoodPrice()).isEqualTo(5.0);
     }
-
-//    @Test
-//    public void deleteRestaurant() {
-//        this.service.addRestaurants(Arrays.asList(new Restaurant("yummy")));
-//        assertThat(this.service.getAllRestaurant().size()).isEqualTo(1);
-//        this.service.deleteRestaurant("yummy");
-//        assertThat(this.service.getAllRestaurant().size()).isEqualTo(0);
-//    }
-
-//    @Test
-//    public void deleteRestaurant() {
-//        this.service.addRestaurants(Arrays.asList(new Restaurant("yummy")));
-//        this.service.addFoodList(Arrays.asList(new FoodItem("yummy", "salad", 5.0)));
-//        this.service.deleteRestaurant("yummy");
-//        assertThat(this.service.getAllRestaurant().isEmpty()).isTrue();
-//        assertThat(this.service.getMenuFromRestaurant("yummy").isEmpty()).isTrue();
-//    }
 }

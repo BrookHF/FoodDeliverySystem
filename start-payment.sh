@@ -1,0 +1,1 @@
+java -jar PaymentService/target/PaymentService-1.0-SNAPSHOT.jar 
