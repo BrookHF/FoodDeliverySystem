@@ -12,11 +12,11 @@ import org.springframework.data.repository.query.Param;
 @Data
 public class PaymentDao {
 
-    private Long orderId;
+    private String orderId;
     private Enum<PaymentStatus> paymentStatus;
 
     @JsonCreator
-    public PaymentDao(@Param("orderId") Long orderId, @Param("paymentStatus") PaymentStatus paymentStatus) {
+    public PaymentDao(@Param("orderId") String orderId, @Param("paymentStatus") PaymentStatus paymentStatus) {
         this.orderId = orderId;
         this.paymentStatus = paymentStatus;
     }

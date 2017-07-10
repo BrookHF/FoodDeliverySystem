@@ -18,7 +18,7 @@ public class MealOrderController {
     }
 
     @RequestMapping(value = "/order/{orderId}", method = RequestMethod.GET)
-    public MealOrder orderDetail(@PathVariable Long orderId) {
+    public MealOrder orderDetail(@PathVariable String orderId) {
         return mealOrderService.orderDetail(orderId);
     }
 
@@ -34,7 +34,7 @@ public class MealOrderController {
     }
 
     @RequestMapping(value = "/order/{orderId}", method = RequestMethod.DELETE)
-    public MealOrder deleteOrder(@PathVariable Long orderId) {
+    public MealOrder deleteOrder(@PathVariable String orderId) {
         return mealOrderService.cancelOrder(orderId);
     }
 

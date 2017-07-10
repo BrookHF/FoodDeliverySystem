@@ -8,13 +8,13 @@ import demo.domain.PaymentDao;
  */
 public interface MealOrderService {
 
-    MealOrder orderDetail(Long orderId);
+    MealOrder orderDetail(String orderId);
 
     MealOrder giveOrder(MealOrder newOrder);
 
     MealOrder changeOrderPaymentStatus(PaymentDao paymentDao);
 
-    MealOrder cancelOrder(Long orderId);
+    MealOrder cancelOrder(String orderId);
 
     void purge();
 

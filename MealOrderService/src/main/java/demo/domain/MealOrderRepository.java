@@ -6,9 +6,9 @@ import org.springframework.data.repository.query.Param;
 /**
  * Created by vagrant on 6/27/17.
  */
-public interface MealOrderRepository extends PagingAndSortingRepository<MealOrder, Long> {
+public interface MealOrderRepository extends PagingAndSortingRepository<MealOrder, String> {
 
-    MealOrder findByOrderId(@Param("orderId") Long orderId);
+    MealOrder findByOrderId(@Param("orderId") String orderId);
 
-    MealOrder deleteByOrderId(@Param("orderId") Long orderId);
+    MealOrder deleteByOrderId(@Param("orderId") String orderId);
 }

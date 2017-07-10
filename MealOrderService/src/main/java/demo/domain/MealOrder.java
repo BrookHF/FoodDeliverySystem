@@ -11,7 +11,7 @@ import org.springframework.data.annotation.PersistenceConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
-//import java.util.List;
+import java.util.List;
 
 /**
  * Created by vagrant on 6/27/17.
@@ -27,7 +27,7 @@ public class MealOrder {
 
     private String customerName;
     private String restaurantName;
-    //private List<FoodItem> foodItemList;
+    private List<FoodItem> foodItemList;
     private double totalPrice;
     private Date orderTime;
     private String deliveryAddress;
@@ -35,8 +35,7 @@ public class MealOrder {
     private Enum<PaymentStatus> paymentStatus;
 
     @JsonCreator
-    public MealOrder(@JsonProperty("customerName") String customerName, @JsonProperty("deliveryAddress") String deliveryAddress) {
+    public MealOrder(@JsonProperty("customerName") String customerName) {
         this.customerName = customerName;
-        this.deliveryAddress = deliveryAddress;
     }
 }

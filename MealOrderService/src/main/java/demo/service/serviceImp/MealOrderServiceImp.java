@@ -20,7 +20,7 @@ public class MealOrderServiceImp implements MealOrderService {
         this.mealOrderRepository = mealOrderRepository;
     }
 
-    public MealOrder orderDetail(Long orderId) {
+    public MealOrder orderDetail(String orderId) {
         return mealOrderRepository.findByOrderId(orderId);
     }
 
@@ -34,7 +34,7 @@ public class MealOrderServiceImp implements MealOrderService {
         return mealOrderRepository.save(mealOrder);
     }
 
-    public MealOrder cancelOrder(Long orderId) {
+    public MealOrder cancelOrder(String orderId) {
         return mealOrderRepository.deleteByOrderId(orderId);
     }
 
