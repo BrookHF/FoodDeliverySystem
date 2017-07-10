@@ -1,40 +1,42 @@
 package demo.domain;
 
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.PersistenceConstructor;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import java.util.Date;
-import java.util.List;
+//import java.util.List;
 
 /**
  * Created by vagrant on 6/27/17.
  */
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 @Data
-@JsonInclude(JsonInclude.Include.NON_NULL)
-@Entity
+@RequiredArgsConstructor(onConstructor = @__(@PersistenceConstructor))
+@Document
 public class MealOrder {
 
     @Id
-    @GeneratedValue
-    private Long orderId;
+    private String orderId;
 
     private String customerName;
     private String restaurantName;
-    private List<FoodItemDao> foodItemList;
+    //private List<FoodItem> foodItemList;
     private double totalPrice;
     private Date orderTime;
     private String deliveryAddress;
     private Date estimatedDeliveryTime;
     private Enum<PaymentStatus> paymentStatus;
 
-    public MealOrder() {
-    }
-
-    public MealOrder(String customerName) {
+    @JsonCreator
+    public MealOrder(@JsonProperty("customerName") String customerName, @JsonProperty("deliveryAddress") String deliveryAddress) {
         this.customerName = customerName;
+        this.deliveryAddress = deliveryAddress;
     }
 }
